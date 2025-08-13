@@ -46,6 +46,7 @@ exclude = [
     "dist",
     "node_modules",
     "site-packages",
+    "components/user/__init__.py",
 ]
 
 lint.select = ["E", "F", "B", "W", "I", "N", "UP", "S", "BLE", "C4", "DTZ", "T10", "EM", "ISC", "ICN"]
