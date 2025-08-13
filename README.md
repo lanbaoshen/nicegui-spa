@@ -26,5 +26,6 @@ git clone https://github.com/lanbaoshen/nicegui-spa
 cd nicegui-spa
 pip3 install uv
 uv sync
+source .venv/bin/activate
 python3 main.py
 ```
