@@ -18,20 +18,22 @@ class LoginPage:
                     ui.button('LOG IN', on_click=self.login).classes('bg-blue-500 w-4/5 teal-btn')
 
     def login(self):
-        if all([input_.validate() for input_ in (self.username, self.password)]):  # noqa: C419
-            try:
-                if self.username.value == 'lanbao':
-                    app.storage.user['authenticated'] = True
-                    app.storage.user['is_superuser'] = True
-                    ui.notify('Login successful', type='positive')
-                elif self.username.value == 'normal':
-                    app.storage.user['authenticated'] = True
-                    app.storage.user['is_superuser'] = False
-                    ui.notify('Login successful', type='positive')
-                else:
-                    raise ValueError('Invalid username or password')  # noqa: EM101
+        if not all([input_.validate() for input_ in (self.username, self.password)]):  # noqa: C419
+            return
 
-                self._callback()
+        try:
+            if self.username.value == 'lanbao':
+                app.storage.user['authenticated'] = True
+                app.storage.user['is_superuser'] = True
+                ui.notify('Login successful', type='positive')
+            elif self.username.value == 'normal':
+                app.storage.user['authenticated'] = True
+                app.storage.user['is_superuser'] = False
+                ui.notify('Login successful', type='positive')
+            else:
+                raise ValueError('Invalid username or password')  # noqa: EM101
 
-            except Exception as e:
-                ui.notify(e, type='negative')
+            self._callback()
+
+        except Exception as e:
+            ui.notify(e, type='negative')

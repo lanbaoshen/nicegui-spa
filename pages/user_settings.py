@@ -1,6 +1,6 @@
 from nicegui import ui
 
-from components.user import MyProfile
+from components.user import MyProfile, UpdatePassword
 
 
 class UserSettingsPage:
@@ -12,3 +12,5 @@ class UserSettingsPage:
         with ui.tab_panels(tabs, value='My Profile').classes('w-full'):
             with ui.tab_panel('My Profile'):
                 MyProfile()
+            with ui.tab_panel('Password'):
+                UpdatePassword()
