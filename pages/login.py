@@ -2,7 +2,7 @@ from collections.abc import Callable
 
 from nicegui import app, ui
 
-from components.user import PasswordInput, UsernameInput
+from components.user import ForgotPassword, PasswordInput, UsernameInput
 
 
 class LoginPage:
@@ -14,7 +14,7 @@ class LoginPage:
                     ui.image('/static/fastapi-logo.svg').classes('w-3/5')
                     self.username = UsernameInput().classes('w-4/5')
                     self.password = PasswordInput().classes('w-4/5')
-                    ui.link('Forgot password?', '#').classes('text-s text-blue-500 no-underline')
+                    ui.link('Forgot password?').classes('text-s text-blue-500 no-underline').on('click', ForgotPassword)
                     ui.button('LOG IN', on_click=self.login).classes('bg-blue-500 w-4/5 teal-btn')
 
     def login(self):

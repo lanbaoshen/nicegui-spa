@@ -1,4 +1,5 @@
 from .email_input import EmailInput
+from .forgot_password import ForgotPassword
 from .my_profile import MyProfile
 from .name_input import NameInput
 from .password_input import PasswordInput
@@ -13,4 +14,5 @@ __all__ = [
     'UsernameInput',
     'update_password',
     'UpdatePassword',
+    'ForgotPassword',
 ]
