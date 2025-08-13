@@ -18,6 +18,13 @@ ui.add_css(
     transform: scaleX(1.1);
     transform-origin: left;
 }
+.rounded-btn {
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .q-tab--active {
     color: teal !important;
 }

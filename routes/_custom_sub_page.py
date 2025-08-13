@@ -21,7 +21,7 @@ class CustomSubPages(ui.sub_pages):
 
     def _login(self, intended_path: str) -> None:
         def callback():
-            ui.navigate.reload()
+            ui.run_javascript('window.location.reload();')
             ui.navigate.to(intended_path)
 
         LoginPage(callback=callback)
