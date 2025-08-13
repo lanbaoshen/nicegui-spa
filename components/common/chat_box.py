@@ -9,12 +9,6 @@ class ChatBox(ui.card):
         self.classes('chat-box')
         self.visible = False
 
-        self.content()
-
-        self.messages.append(('Hi there! How can I help you today?', 'Assistant', '/static/favicon.png'))
-        self.chat_messages.refresh()
-
-    def content(self):
         with self:
             with ui.column().classes('w-full h-full') as self.message_container:
                 self.chat_messages()
@@ -26,6 +20,9 @@ class ChatBox(ui.card):
         ui.button(on_click=lambda: self.set_visibility(not self.visible), icon='android').props('flat').classes(
             'bot-btn'
         )
+
+        self.messages.append(('Hi there! How can I help you today?', 'Assistant', '/static/favicon.png'))
+        self.chat_messages.refresh()
 
     @ui.refreshable
     def chat_messages(self) -> None:

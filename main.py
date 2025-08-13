@@ -11,5 +11,4 @@ app.add_static_files('/static', Path(__file__).parent / 'static')
 # https://github.com/zauberzeug/nicegui/pull/5005
 import routes  # noqa: F401, E402
 
-# TODO
 ui.run(storage_secret=str(uuid4()))

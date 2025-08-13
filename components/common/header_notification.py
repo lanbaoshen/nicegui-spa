@@ -10,9 +10,12 @@ class HeaderNotification(ui.header):
             self.notifs = notifs
 
             with self.classes('notify'):
-                with ui.row():
+                with ui.row().classes('items-center w-full flex'):
                     ui.icon('notifications_active').classes('notify-icon')
                     self.notif_label = ui.label().classes('notify-label')
+                    ui.button(icon='close', on_click=lambda: self.set_visibility(False)).classes('text-white').props(
+                        'flat dense'
+                    )
 
             ui.timer(5.0, self.update_notif)
 
