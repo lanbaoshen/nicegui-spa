@@ -1,7 +1,7 @@
 from nicegui import ui
 
 from components.common import ChatBox, HeaderNotification, Sidebar
-from routes import admin, item, user
+from routes import admin, dashboard, item, user
 from routes._custom_sub_page import custom_sub_pages, is_authenticated, is_superuser
 
 
@@ -11,11 +11,12 @@ def main_page():
     HeaderNotification()
 
     items = [
+        {'target': '/', 'label': 'Dashboard', 'icon': 'home'},
         {'target': '/item', 'label': 'Item', 'icon': 'book'},
         {'target': '/user/settings', 'label': 'User Settings', 'icon': 'settings'},
     ]
     sub_pages = {
-        '/': item.item_page,
+        '/': dashboard.dashboard_page,
         '/item': item.item_page,
         '/user/settings': user.user_settings_page,
     }
