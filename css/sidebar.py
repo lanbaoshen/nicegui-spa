@@ -5,7 +5,6 @@ ui.add_css(
 .left-drawer {
     background-color: #f8f9fa !important;
 }
-
 .left-drawer-toggle {
     position: fixed;
     bottom: 20px;

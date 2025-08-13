@@ -1,6 +1,6 @@
 from nicegui import ui
 
-from components.common import HeaderNotification, Sidebar
+from components.common import ChatBox, HeaderNotification, Sidebar
 from routes import admin, item, user
 from routes._custom_sub_page import custom_sub_pages, is_authenticated, is_superuser
 
@@ -32,3 +32,5 @@ def main_page():
 
     if is_authenticated():
         Sidebar(items=items)
+
+        ChatBox()

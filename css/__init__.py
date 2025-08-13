@@ -1,6 +1,6 @@
 from nicegui import ui
 
-from . import editor, notify, sidebar  # noqa: F401
+from . import chat_box, editor, notify, sidebar  # noqa: F401
 
 ui.add_css(
     """
